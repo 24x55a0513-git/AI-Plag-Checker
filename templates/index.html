@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Code Plagiarism Checker</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="loading">
+
+    <div class="loader"></div>
+
+    <h2>Analyzing Code...</h2>
+
+</div>
+
+<div class="background"></div>
+
+<div class="glass-card">
+
+<h1>🤖 AI Code Plagiarism Checker</h1>
+
+<p>
+Compare two source code files using
+Token Similarity, AST,
+Control Flow and Complexity Analysis.
+</p>
+
+<form action="/compare"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="showLoader()">
+
+    <!-- Comparison Mode -->
+
+    <div class="compare-mode">
+
+        <label><b>Comparison Mode</b></label>
+
+        <br><br>
+
+        <input
+            type="radio"
+            id="complete"
+            name="compare_mode"
+            value="complete"
+            checked>
+
+        <label for="complete">
+            Compare Complete Code (Includes comments & blank lines)
+        </label>
+
+        <br><br>
+
+        <input
+            type="radio"
+            id="clean"
+            name="compare_mode"
+            value="clean">
+
+        <label for="clean">
+            Compare Only Code (Ignore comments & blank lines)
+        </label>
+
+    </div>
+
+    <br>
+
+    <!-- First File -->
+
+    <div class="upload-box">
+
+        <label>Choose First File</label>
+
+        <input
+            type="file"
+            id="file1"
+            name="file1"
+            hidden
+            required>
+
+        <label for="file1" class="custom-upload">
+            📂 Choose First File
+        </label>
+
+        <p id="file1-name" class="filename">
+            No file selected
+        </p>
+
+    </div>
+
+    <!-- Second File -->
+
+    <div class="upload-box">
+
+        <label>Choose Second File</label>
+
+        <input
+            type="file"
+            id="file2"
+            name="file2"
+            hidden
+            required>
+
+        <label for="file2" class="custom-upload">
+            📂 Choose Second File
+        </label>
+
+        <p id="file2-name" class="filename">
+            No file selected
+        </p>
+
+    </div>
+
+    <button class="compare-btn">
+        Compare Files 🚀
+    </button>
+
+</form>
+
+</div>
+
+<script>
+
+function showLoader(){
+    document.getElementById("loading").style.display="flex";
+}
+
+</script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
