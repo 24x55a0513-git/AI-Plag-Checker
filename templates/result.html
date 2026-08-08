@@ -1,283 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AI Code Plagiarism Result</title>
-
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
-
 </head>
-
 <body>
-
 <div class="container">
-
 <h1 class="page-title">
 🤖 AI Code Plagiarism Analysis
 </h1>
-
-<!-- Overall Similarity -->
-
 <div class="overall-card">
-
 <h2>Overall Similarity</h2>
-
 <div class="overall-score">
-
 {{ similarity }}%
-
 </div>
-
 <p>
-
 Combined score based on Token Similarity,
 AST Similarity, Control Flow,
 Complexity and AI Analysis.
-
 </p>
-
 </div>
-
-<!-- Metrics -->
-
 <div class="metric-grid">
-
 <div class="metric-card">
-
 <h3>🪙 Token Similarity</h3>
-
 <div class="metric-value">
-
 {{ token_similarity }}%
-
 </div>
-
 </div>
-
 <div class="metric-card">
-
 <h3>🌳 AST Similarity</h3>
-
 <div class="metric-value">
-
 {{ ast_score }}%
-
 </div>
-
 </div>
-
 <div class="metric-card">
-
 <h3>🔀 Control Flow</h3>
-
 <div class="metric-value">
-
 {{ cfg_score }}%
-
 </div>
-
 </div>
-
 <div class="metric-card">
-
 <h3>⚙ Complexity</h3>
-
 <div class="metric-value">
-
 {{ complexity_score }}%
-
 </div>
-
 </div>
-
 </div>
-
-<!-- Risk & Clone -->
-
 <div class="metric-grid">
-
 <div class="metric-card">
-
 <h3>🚨 Risk Level</h3>
-
 {% if "Low" in risk %}
-
 <div class="metric-value low">
-
 {{ risk }}
-
 </div>
-
 {% elif "Medium" in risk %}
-
 <div class="metric-value medium">
-
 {{ risk }}
-
 </div>
-
 {% else %}
-
 <div class="metric-value high">
-
 {{ risk }}
-
 </div>
-
 {% endif %}
-
 </div>
-
 <div class="metric-card">
-
 <h3>🧬 Clone Detection</h3>
-
 <div class="metric-value clone">
-
 {{ clone_type }}
-
 </div>
-
 </div>
-
 </div>
-
-<!-- Recommendation -->
-
 <div class="recommendation-card">
-
 <h2>
 💡 Recommendation
 </h2>
-
 <p>
-
 {{ recommendation }}
-
 </p>
-
 </div>
-
-<!-- Part 2 Starts Here -->
- <!-- ========================= -->
-<!-- Side-by-Side Code Comparison -->
-<!-- ========================= -->
-
 <div class="comparison-section">
-
     <h2 class="compare-title">
         📝 Side-by-Side Code Comparison
     </h2>
-
     <div class="comparison-wrapper">
 
-        <!-- File 1 -->
-
         <div class="comparison-box">
-
             <div class="comparison-header">
-
                 📄 {{ file1 }}
-
             </div>
-
             <div class="comparison-body">
-
                 <table class="code-table">
-
                     <tbody>
-
                     {% for line in code1 %}
-
                     <tr>
-
                         <td class="line-number">
-
                             {{ loop.index }}
-
                         </td>
-
                         <td class="code-text">
-
                             <pre>{{ line }}</pre>
-
                         </td>
-
                     </tr>
-
                     {% endfor %}
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
-        <!-- File 2 -->
-
         <div class="comparison-box">
-
             <div class="comparison-header">
-
                 📄 {{ file2 }}
-
             </div>
-
             <div class="comparison-body">
-
                 <table class="code-table">
-
                     <tbody>
-
                     {% for line in code2 %}
-
                     <tr>
-
                         <td class="line-number">
-
                             {{ loop.index }}
-
                         </td>
-
                         <td class="code-text">
-
                             <pre>{{ line }}</pre>
-
                         </td>
-
                     </tr>
-
                     {% endfor %}
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-
-<!-- Part 3 Starts Here -->
- <!-- ========================= -->
-<!-- Action Buttons -->
-<!-- ========================= -->
-
 <div class="action-buttons">
-
     {% if pdf_path %}
     <a href="{{ url_for('download_pdf', filename=pdf_path) }}">
         <button class="download-btn">
@@ -285,19 +141,13 @@ Complexity and AI Analysis.
         </button>
     </a>
     {% endif %}
-
     <a href="{{ url_for('home') }}">
         <button class="compare-btn">
             🔄 Compare New Files
         </button>
     </a>
-
 </div>
-
 </div>
-
 </div>
-
 </body>
-
 </html>

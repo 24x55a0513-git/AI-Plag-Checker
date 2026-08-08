@@ -60,9 +60,7 @@ body{
     color:#ddd;
     line-height:1.6;
 }
-/* ===========================
-   Metric Cards
-=========================== */
+
 
 .metric-grid{
     display:grid;
@@ -134,9 +132,7 @@ body{
     color:#38bdf8;
 }
 
-/* ===========================
-   Recommendation Card
-=========================== */
+
 
 .recommendation-card{
     margin-top:30px;
@@ -155,12 +151,7 @@ body{
     color:#e5e7eb;
     font-size:16px;
 }
-/* ===========================
-   Code Comparison
-=========================== */
-/* ===========================
-   Comparison Section
-=========================== */
+
 
 .comparison-section{
     margin-top:40px;
@@ -246,7 +237,6 @@ body{
     line-height:1.6;
 }
 
-/* Scrollbar */
 
 .comparison-body::-webkit-scrollbar{
     width:8px;
@@ -266,7 +256,6 @@ body{
     background:#64748b;
 }
 
-/* Mobile */
 
 @media(max-width:900px){
 
@@ -288,26 +277,6 @@ body{
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===========================
-   Upload Page
-=========================== */
-
 .glass-card{
     width:100%;
     max-width:700px;
@@ -358,10 +327,6 @@ body{
     font-size:15px;
 }
 
-/* ===========================
-   Buttons
-=========================== */
-
 .action-buttons{
     display:flex;
     justify-content:center;
@@ -396,9 +361,6 @@ body{
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-/* ===========================
-   Loading Screen
-=========================== */
 
 #loading{
     display:none;
@@ -427,10 +389,6 @@ body{
         transform:rotate(360deg);
     }
 }
-
-/* ===========================
-   Responsive
-=========================== */
 
 @media(max-width:768px){
 
