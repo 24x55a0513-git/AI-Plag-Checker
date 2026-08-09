@@ -67,7 +67,6 @@ def compare():
     recommendation = result["recommendation"]
     clone_type = result["clone_type"]
 
-    # Code to display
     if compare_mode == "clean":
         display_code1 = preprocess_code(original_code1)
         display_code2 = preprocess_code(original_code2)
@@ -75,7 +74,6 @@ def compare():
         display_code1 = original_code1
         display_code2 = original_code2
 
-    # Generate PDF
     pdf = generate_report(
         file1.filename,
         file2.filename,

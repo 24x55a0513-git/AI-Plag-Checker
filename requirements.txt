@@ -5,19 +5,19 @@ gunicorn==23.0.0
 huggingface_hub==0.34.4
 safetensors==0.6.2
 sentencepiece==0.2.1
-torch==2.8.0
+torch>=2.10.0
 transformers==4.56.0
-scikit-learn==1.7.1
-numpy==2.3.2
+
+scikit-learn>=1.8
+numpy>=2.4
 scipy==1.16.1
-scikit-learn==1.7.1
 joblib==1.5.2
 threadpoolctl==3.6.0
 
 networkx==3.5
 regex==2025.7.34
 tqdm==4.67.1
-PyYAML==6.0.2
+PyYAML==6.0.3
 packaging==25.0
 filelock==3.19.1
 fsspec==2025.7.0
