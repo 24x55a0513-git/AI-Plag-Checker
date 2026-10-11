@@ -1,6 +1,36 @@
 # 🤖 AI Code Plagiarism Checker
 
 An AI-powered web application that compares two source-code files and analyzes their similarity using multiple code-analysis techniques. It generates an overall similarity score, plagiarism risk assessment, recommendations, and a downloadable PDF report.
+# Project Structure
+
+AI-Plag-Checker/
+│
+├── engine/
+│   ├── ast_compare.py
+│   ├── complexity.py
+│   ├── control_flow.py
+│   ├── embeddings.py
+│   ├── clone_detector.py
+│   ├── preprocessor.py
+│   ├── risk.py
+│   ├── scorer.py
+│   └── token_similarity.py
+│
+├── templates/
+│   ├── index.html
+│   └── result.html
+│
+├── static/
+│   ├── script.js
+│   └── style.css
+│
+├── utils/
+│   ├── highlight.py
+│   └── report.py
+│
+├── app.py
+├── requirements.txt
+└── README.md
 
 ## 🚀 Features
 
